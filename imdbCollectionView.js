@@ -30,13 +30,13 @@ module.exports = Backbone.View.extend({
           newMovieToSubmit.save();
           this.collection.add(newMovieToSubmit);
           this.addMovie(newMovieToSubmit);
+
 //           setTimeout(function(){
 //       //this.render();
 // }, 500);
    },
 
-
-
+   
   initialize: function (){
     this.addAllMovies();
   },

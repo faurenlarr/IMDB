@@ -36,24 +36,23 @@ body {
     margin-top: 20px;
     border-radius: 10px; }
 
-.wrapper {
+header {
   width: 50%;
   margin-top: 20px;
   margin-left: auto;
-  margin-right: auto;
-  margin-top: 70px; }
-  .wrapper img {
+  margin-right: auto; }
+  header img {
     width: 35%;
     margin-left: 83px;
     height: 300px; }
-  .wrapper h3 {
+  header h3 {
     font-size: 15px;
     color: #c44549;
     width: 20%; }
-  .wrapper h1 {
+  header h1 {
     font-size: 30px;
     color: #c44549; }
-  .wrapper .delete {
+  header .delete {
     background-color: #c44549;
     color: white;
     border: 1px solid #c44549;
@@ -61,7 +60,7 @@ body {
     height: 37px;
     font-size: 12px;
     border-radius: 10px; }
-  .wrapper .edit {
+  header .edit {
     background-color: #1b4e60;
     color: white;
     border: 1px solid white;
@@ -75,6 +74,3 @@ body {
   width: 46%;
   padding: 0px;
   float: right; }
-
-.editform {
-  display: block; }

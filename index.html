@@ -9,7 +9,7 @@
   <body>
     <script type="html/template" id="newMovieTmpl">
 
-    <header class="wrapper">
+    <header>
 
           <img src="<%=cover%>" alt="" />
 
@@ -21,15 +21,7 @@
                 <button data-id='<%=_id%>' class="delete">delete movie</button>
                 <button data-id='<%=_id%>' class="edit">edit movie</button>
               </div>
-
-            <div class="editform">
-              <input type="text" class="title" placeholder="title">
-              <input type="text" class="release" placeholder="release date" >
-              <input type="text" class="cover" placeholder="cover photo url" >
-              <input type="text" class="plot" placeholder="plot">
-              <input type="text" class="rating" placeholder="rating(1-5 stars)">
-              <button class="send-stuff">submit</button>
-            </div>
+            
 
 
     </header>

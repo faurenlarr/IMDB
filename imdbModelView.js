@@ -19,15 +19,15 @@ module.exports = Backbone.View.extend({
     return this;
   },
   deleteMovie : function() {
-    var _id = this.model.attributes._id;
-    console.log(_id);
-    this.model.destroy(_id);
+    var id = this.model.attributes._id;
+    this.model.destroy(id);
   },
 
   editMovie : function (){
-    var _id = this.model.attributes._id;
-    _id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
-      console.log(_id);
+    console.log(id);
+
+    var id = this.model.attributes._id;
+    id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
   },
 
   initialize: function () {}
