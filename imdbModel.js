@@ -17,6 +17,6 @@ module.exports = Backbone.Model.extend({
 
 
 
-// NEED DEFAULTS TO WORK
-//extra form for editing only
+// NEED DEFAULTS TO WORK- ones on this page
+//extra form for editing only/edit not working
 //need to load without refreshing

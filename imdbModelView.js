@@ -19,17 +19,22 @@ module.exports = Backbone.View.extend({
     return this;
   },
   deleteMovie : function() {
-    var id = this.model.attributes._id;
-    this.model.destroy(id);
+    // var _id = this.model.attributes._id;
+    // this.model.destroy(_id);
+    this.model.destroy();
+    // this.remove();
+    //does it without having to refresh
   },
 
   editMovie : function (){
-    console.log(id);
-
-    var id = this.model.attributes._id;
-    id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
+    console.log(_id);
+    var _id = this.model.attributes._id;
+    _id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
   },
 
   initialize: function () {}
 
 });
+
+//individual movie template/ for deleting and editing one model view// section-movie is where each individual one goes
+// .toJSON converts this.model to the data object

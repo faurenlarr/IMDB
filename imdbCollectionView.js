@@ -12,31 +12,27 @@ module.exports = Backbone.View.extend({
     'click .send-stuff': 'submitMovie',
 
   },
-  // render: function () {
-  //   var stuff = this.template(this.model.toJSON());
-  //   this.$el.html(stuff);
-  //   return this;
-  // },
+
   submitMovie : function(event){
+    event.preventDefault();
+    var self = this;
     var newMovie = {
-        title: this.$el.find('input[class="title"]').val(),
-        release: this.$el.find('input[class="release"]').val(),
-        cover: this.$el.find('input[class="cover"]').val(),
-        plot: this.$el.find('input[class="plot"]').val(),
-        rating: this.$el.find('input[class="rating"]').val(),
+        title: $('#title').val() || 'A really good movie',
+        release: $('#release').val() || '90s',
+        cover: $('#cover').val() || 'http://www.placecage.com/100/200',
+        plot: $('#plot').val() || 'Lots of things happen',
+        rating: $('#rating').val() || '5',
       };
       console.log(newMovie);
       var newMovieToSubmit = new movieModel(newMovie);
-          newMovieToSubmit.save();
-          this.collection.add(newMovieToSubmit);
-          this.addMovie(newMovieToSubmit);
-
+      newMovieToSubmit.save().then(function (){
+      self.collection.add(newMovieToSubmit);
+      self.addMovie(newMovieToSubmit);
+    });
 //           setTimeout(function(){
 //       //this.render();
 // }, 500);
    },
-
-   
   initialize: function (){
     this.addAllMovies();
   },
@@ -51,3 +47,7 @@ module.exports = Backbone.View.extend({
   }
 
 });
+
+//working with entire collection // puts it on the page // container is where they all go
+//submitMovie adds a movie as a new model and adds that model to the collection. add movie adds that movie model to a movie view,
+//and add all movies adds the one movie view to the collection view, which is appended to the page on initialize.

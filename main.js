@@ -6,8 +6,11 @@ $(function () {
   var movies = new movieCollection();
 
   movies.fetch().then(function (data) {
-    console.log("these are the movies: ", movies);
+    console.log(movies);
     new movieCollectionView({collection: movies});
 
   });
 });
+
+
+//where the collection is made
