@@ -29,10 +29,14 @@ module.exports = Backbone.View.extend({
       self.collection.add(newMovieToSubmit);
       self.addMovie(newMovieToSubmit);
     });
-//           setTimeout(function(){
-//       //this.render();
-// }, 500);
+$('#title').val("");
+$('#release').val("");
+$('#cover').val("") ;
+$('#plot').val("");
+$('#rating').val("");
+
    },
+   
   initialize: function (){
     this.addAllMovies();
   },

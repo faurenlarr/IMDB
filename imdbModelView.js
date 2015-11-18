@@ -22,7 +22,7 @@ module.exports = Backbone.View.extend({
     // var _id = this.model.attributes._id;
     // this.model.destroy(_id);
     this.model.destroy();
-    // this.remove();
+    this.remove();
     //does it without having to refresh
   },
 
