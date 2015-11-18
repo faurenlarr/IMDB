@@ -14,3 +14,9 @@ module.exports = Backbone.Model.extend({
 
   }
 });
+
+
+
+// NEED DEFAULTS TO WORK
+//extra form for editing only
+//need to load without refreshing

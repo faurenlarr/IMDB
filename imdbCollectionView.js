@@ -34,6 +34,9 @@ module.exports = Backbone.View.extend({
 //       //this.render();
 // }, 500);
    },
+
+
+
   initialize: function (){
     this.addAllMovies();
   },

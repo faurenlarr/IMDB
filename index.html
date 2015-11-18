@@ -9,15 +9,29 @@
   <body>
     <script type="html/template" id="newMovieTmpl">
 
-    <header>
-          <div class="">
-            <h1 class="title">Title: <%=title%></h1>
-            <h3>Release date: <%=release%></h3>
-            <h3>Plot: <%=plot%></h3>
-            <h3>Rating: <%=rating%> stars</h3>
-          </div>
-            <img src="<%=cover%>" alt="" />
-            <button data-id='<%=_id%>' class="delete">delete movie</button>
+    <header class="wrapper">
+
+          <img src="<%=cover%>" alt="" />
+
+              <div class="words">
+                <h1 class="title"><%=title%></h1>
+                <h3>Release date: <%=release%></h3>
+                <h3>Plot: <%=plot%></h3>
+                <h3>Rating: <%=rating%> stars</h3>
+                <button data-id='<%=_id%>' class="delete">delete movie</button>
+                <button data-id='<%=_id%>' class="edit">edit movie</button>
+              </div>
+
+            <div class="editform">
+              <input type="text" class="title" placeholder="title">
+              <input type="text" class="release" placeholder="release date" >
+              <input type="text" class="cover" placeholder="cover photo url" >
+              <input type="text" class="plot" placeholder="plot">
+              <input type="text" class="rating" placeholder="rating(1-5 stars)">
+              <button class="send-stuff">submit</button>
+            </div>
+
+
     </header>
 
     </script>
@@ -29,20 +43,25 @@
 
 <div class="container">
 
-  <div class="movieform">
+  <form class="movieform">
     <input type="text" class="title" placeholder="title">
     <input type="text" class="release" placeholder="release date" >
     <input type="text" class="cover" placeholder="cover photo url" >
     <input type="text" class="plot" placeholder="plot">
     <input type="text" class="rating" placeholder="rating(1-5 stars)">
     <button class="send-stuff">submit</button>
-  </div>
+  </form>
+
+
+
 
   <section class="movie">
 
   </section>
 
 </div>
+
+
 
     <!-- <script src='node_modules/jquery/dist/jquery.js'></script> -->
     <script src="bundle.js" charset="utf-8"></script>

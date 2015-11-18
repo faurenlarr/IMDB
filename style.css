@@ -16,9 +16,10 @@ body {
     margin: 0; }
 
 .movieform {
-  width: 100%; }
+  width: 90%;
+  margin-left: 90px; }
   .movieform input {
-    width: 19%;
+    width: 15%;
     height: 30px;
     font-size: 15px;
     margin-left: 5px;
@@ -32,26 +33,48 @@ body {
     border: 1px solid white;
     font-size: 15px;
     margin-left: 100px;
-    margin-top: 20px; }
+    margin-top: 20px;
+    border-radius: 10px; }
 
-header {
-  border: 5px solid #c44549;
-  width: 20%;
+.wrapper {
+  width: 50%;
   margin-top: 20px;
-  background-color: #f9f2e5; }
-  header img {
-    width: 98%;
-    height: 250px;
-    margin-left: 2px; }
-  header h3 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px; }
+  .wrapper img {
+    width: 35%;
+    margin-left: 83px;
+    height: 300px; }
+  .wrapper h3 {
     font-size: 15px;
-    color: #c44549; }
-  header h1 {
-    font-size: 30px;
     color: #c44549;
-    text-align: center; }
-  header .delete {
+    width: 20%; }
+  .wrapper h1 {
+    font-size: 30px;
+    color: #c44549; }
+  .wrapper .delete {
     background-color: #c44549;
     color: white;
     border: 1px solid #c44549;
-    margin-left: 100px; }
+    margin-top: -3px;
+    height: 37px;
+    font-size: 12px;
+    border-radius: 10px; }
+  .wrapper .edit {
+    background-color: #1b4e60;
+    color: white;
+    border: 1px solid white;
+    margin-top: -3px;
+    height: 37px;
+    font-size: 12px;
+    border-radius: 10px; }
+
+.words {
+  display: inline-block;
+  width: 46%;
+  padding: 0px;
+  float: right; }
+
+.editform {
+  display: block; }

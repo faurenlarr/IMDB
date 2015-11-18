@@ -9,7 +9,9 @@ module.exports = Backbone.View.extend({
   className: 'movie',
   template: _.template($('#newMovieTmpl').html()),
   events: {
-    'click .delete': 'deleteMovie'
+    'click .delete': 'deleteMovie',
+    'click .edit' : 'editMovie',
+
   },
   render: function () {
     var stuff = this.template(this.model.toJSON());
@@ -17,10 +19,15 @@ module.exports = Backbone.View.extend({
     return this;
   },
   deleteMovie : function() {
-    console.log();
     var _id = this.model.attributes._id;
     console.log(_id);
     this.model.destroy(_id);
+  },
+
+  editMovie : function (){
+    var _id = this.model.attributes._id;
+    _id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
+      console.log(_id);
   },
 
   initialize: function () {}
