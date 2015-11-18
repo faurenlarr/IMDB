@@ -1,13 +1,16 @@
 var Backbone = require('backbone');
-var _ = require('underscore');
 var $ = require('jquery');
 Backbone.$ = $;
+var _ = require('underscore');
+var tmpl = require('./templates');
+
 
 
 module.exports = Backbone.View.extend({
   tagName: 'section',
-  className: 'movie',
-  template: _.template($('#newMovieTmpl').html()),
+  // className: '#ho',
+  model: null,
+  template: _.template(tmpl.newMovieTmpl),
   events: {
     'click .delete': 'deleteMovie',
     'click .edit' : 'editMovie',
@@ -26,10 +29,23 @@ module.exports = Backbone.View.extend({
     //does it without having to refresh
   },
 
-  editMovie : function (){
-    console.log(_id);
-    var _id = this.model.attributes._id;
-    _id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
+  editMovie : function (event){
+event.preventDefault();
+    var editthingy = this.model;
+    editthingy.set ({
+           title: $('#title').val() ,
+           release: $('#release').val() ,
+           cover: $('#cover').val() ,
+           plot: $('#plot').val(),
+           rating: $('#rating').val() ,
+
+    });
+    
+    editthingy.save();
+    this.render();
+
+  //   var _id = this.model.attributes._id;
+  //   _id.set({title:'<%=title%>', release:'<%=release%>', cover: '<%=cover%>', plot:'<%=plot%>', rating:'<%=rating%>'});
   },
 
   initialize: function () {}

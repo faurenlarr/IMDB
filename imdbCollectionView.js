@@ -3,40 +3,41 @@ var _ = require('underscore');
 var $ = require('jquery');
 Backbone.$ = $;
 var movieView = require('./imdbModelView');
-var movieModel = require('./imdbModel');
+// var movieModel = require('./imdbModel');
 
 
 module.exports = Backbone.View.extend({
-  el: '.container',
-  events: {
-    'click .send-stuff': 'submitMovie',
+  el: '.content',
+  collection: null,
+  // events: {
+  //   // 'click .send-stuff': 'submitMovie',
+  //
+  // },
 
-  },
+//   submitMovie : function(event){
+//     event.preventDefault();
+//     var self = this;
+//     var newMovie = {
+//         title: $('#title').val() || 'A really good movie',
+//         release: $('#release').val() || '90s',
+//         cover: $('#cover').val() || 'http://www.placecage.com/100/200',
+//         plot: $('#plot').val() || 'Lots of things happen',
+//         rating: $('#rating').val() || '5',
+//       };
+//       console.log(newMovie);
+//       var newMovieToSubmit = new movieModel(newMovie);
+//       newMovieToSubmit.save().then(function (){
+//       self.collection.add(newMovieToSubmit);
+//       self.addMovie(newMovieToSubmit);
+//     });
+// $('#title').val("");
+// $('#release').val("");
+// $('#cover').val("") ;
+// $('#plot').val("");
+// $('#rating').val("");
+//
+//    },
 
-  submitMovie : function(event){
-    event.preventDefault();
-    var self = this;
-    var newMovie = {
-        title: $('#title').val() || 'A really good movie',
-        release: $('#release').val() || '90s',
-        cover: $('#cover').val() || 'http://www.placecage.com/100/200',
-        plot: $('#plot').val() || 'Lots of things happen',
-        rating: $('#rating').val() || '5',
-      };
-      console.log(newMovie);
-      var newMovieToSubmit = new movieModel(newMovie);
-      newMovieToSubmit.save().then(function (){
-      self.collection.add(newMovieToSubmit);
-      self.addMovie(newMovieToSubmit);
-    });
-$('#title').val("");
-$('#release').val("");
-$('#cover').val("") ;
-$('#plot').val("");
-$('#rating').val("");
-
-   },
-   
   initialize: function (){
     this.addAllMovies();
   },
