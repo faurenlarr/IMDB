@@ -31,7 +31,7 @@ module.exports = Backbone.View.extend({
           var newMovieToSubmit = new movieModel(newMovie);
           newMovieToSubmit.save().then(function (){
           self.collection.add(newMovieToSubmit);
-          self.addMovie(newMovieToSubmit);
+          // self.addMovie(newMovieToSubmit);
         });
     $('#title').val("");
     $('#release').val("");

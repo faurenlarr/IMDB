@@ -27,17 +27,6 @@ form: [
   "</form>"
 ].join(""),
 
-// hiddenform: [
-//   "<form class='editform'>",
-//     "<input type='text' id='title' class='title' placeholder='title'>",
-//     "<input type='text' id='release' class='release' placeholder='release date'>",
-//     "<input type='text' id='cover' class='cover' placeholder='cover photo url' >",
-//     "<input type='text' id='plot' class='plot' placeholder='plot'>",
-//     "<input type='text' id='rating' class='rating' placeholder='rating(1-5 stars)'>",
-//     "<button class='edit-stuff'>submit</button>",
-//   "</form>"
-//
-// ].join(""),
 
 header:[
   "<nav class='navbar'>",

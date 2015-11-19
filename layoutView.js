@@ -13,10 +13,10 @@ module.exports = Backbone.View.extend({
   initialize: function (){
     var self = this;
     var headerINFO = new HeaderView();
-    var formINFO = new FormView();
     var collectionOfMovies = new MovieCollection();
     collectionOfMovies.fetch().then(function (){
       var movieINFO = new MovieView ({collection: collectionOfMovies});
+      var formINFO = new FormView({collection: collectionOfMovies});
 
       // self.$el.find('header').html(headerINFO.render().el);
       // self.$el.find('aside').html(formINFO.render().el);

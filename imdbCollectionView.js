@@ -3,50 +3,27 @@ var _ = require('underscore');
 var $ = require('jquery');
 Backbone.$ = $;
 var movieView = require('./imdbModelView');
-// var movieModel = require('./imdbModel');
+
 
 
 module.exports = Backbone.View.extend({
   el: '.content',
   collection: null,
-  // events: {
-  //   // 'click .send-stuff': 'submitMovie',
-  //
-  // },
 
-//   submitMovie : function(event){
-//     event.preventDefault();
-//     var self = this;
-//     var newMovie = {
-//         title: $('#title').val() || 'A really good movie',
-//         release: $('#release').val() || '90s',
-//         cover: $('#cover').val() || 'http://www.placecage.com/100/200',
-//         plot: $('#plot').val() || 'Lots of things happen',
-//         rating: $('#rating').val() || '5',
-//       };
-//       console.log(newMovie);
-//       var newMovieToSubmit = new movieModel(newMovie);
-//       newMovieToSubmit.save().then(function (){
-//       self.collection.add(newMovieToSubmit);
-//       self.addMovie(newMovieToSubmit);
-//     });
-// $('#title').val("");
-// $('#release').val("");
-// $('#cover').val("") ;
-// $('#plot').val("");
-// $('#rating').val("");
-//
-//    },
 
   initialize: function (){
     this.addAllMovies();
+    this.listenTo(this.collection, 'change', this.addAllMovies);
+
   },
   addMovie: function (movieModel) {
     console.log(movieModel);
     var MovieView = new movieView({model: movieModel});
     this.$el.append(MovieView.render().el);
+
   },
   addAllMovies: function(){
+      $('.content').html("");
     _.each(this.collection.models, this.addMovie, this);
 
   }

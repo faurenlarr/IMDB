@@ -8,7 +8,7 @@ var tmpl = require('./templates');
 
 module.exports = Backbone.View.extend({
   tagName: 'section',
-  // className: '#ho',
+
   model: null,
   template: _.template(tmpl.newMovieTmpl),
   events: {
