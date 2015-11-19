@@ -14,7 +14,7 @@ module.exports = Backbone.View.extend({
   events: {
     'click .delete': 'deleteMovie',
     'click .edit' : 'editMovie',
-
+    // 'submit .editedMovie' : 'editMovie'
   },
   render: function () {
     var stuff = this.template(this.model.toJSON());
@@ -40,7 +40,7 @@ event.preventDefault();
            rating: $('#rating').val() ,
 
     });
-    
+    // $('.editform').addClass('hidden');
     editthingy.save();
     this.render();
 
